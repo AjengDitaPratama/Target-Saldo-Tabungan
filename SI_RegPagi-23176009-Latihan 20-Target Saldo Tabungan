@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package targetsaldotabungan;
+
+/**
+ *
+ * @author LENOVO
+ * Nama : Ajeng Dita Pratama
+ * Kelas : Sistem Informasi
+ * NIM : 23176009
+ * Deskripsi program : Program ini berisi program untuk menampilkan
+ * target saldo tabungan
+ */
+import java.text.DecimalFormat;
+public class TargetSaldoTabungan {
+    
+    public static void main(String[] args) {
+        double saldoAwal = 3500000;
+        double bungaPerBulan = 8;
+        double saldoTarget = 6000000;
+        
+        DecimalFormat df = new DecimalFormat("#,##0"); // Format untuk menampilkan saldo dalam ribuan
+        int bulan = 0;
+        
+        while (saldoAwal < saldoTarget) {
+            bulan++;
+            saldoAwal += saldoAwal * (bungaPerBulan / 100);
+            System.out.println("Saldo di bulan ke-" + bulan + " Rp." + df.format(saldoAwal));
+        }
+    }
+}
